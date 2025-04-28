@@ -1,0 +1,5 @@
+127.0.0.1 - - [28/Apr/2025:18:10:21 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:18:10:22 +0530] "GET /Online_Bookshop/index.jsp HTTP/1.1" 200 311
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:18:10:22 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:18:10:24 +0530] "GET /Online_Bookshop/addBook.jsp HTTP/1.1" 200 670
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:18:12:26 +0530] "POST /Online_Bookshop/addBook HTTP/1.1" 200 57
