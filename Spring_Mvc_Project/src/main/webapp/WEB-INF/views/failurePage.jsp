@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<body>
+<%
+   Object failureMessage = request.getAttribute("failureMessage");
+%>
+<h2>   
+     <%=failureMessage %>
+   </h2>
+</body>
+</html>

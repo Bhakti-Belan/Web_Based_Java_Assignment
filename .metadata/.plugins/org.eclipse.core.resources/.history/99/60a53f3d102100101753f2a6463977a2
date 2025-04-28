@@ -1,0 +1,5 @@
+package example.hibernate.exception;
+
+public class ResourceNotFoundException extends RuntimeException {
+
+}

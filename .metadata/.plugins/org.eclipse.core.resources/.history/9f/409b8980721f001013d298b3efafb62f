@@ -1,0 +1,29 @@
+package example.hibernate.many_to_many_bidirectional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import example.hibernate.many_to_many_bidirectional.HibernateUtils;
+import example.hibernate.one_to_many_unidirectional.Customer;
+
+public class AddCandidatesExampleMain {
+
+	public AddCandidatesExampleMain() {
+		try(
+				SessionFactory factory=HibernateUtils.getSessionFactory();
+				Session session =factory.openSession())
+		{
+			Transaction tx=session.beginTransaction();
+			session.persist(c1);
+			session.persist(c2);
+			tx.commit();
+			System.out.println("Records Added");
+			
+	}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

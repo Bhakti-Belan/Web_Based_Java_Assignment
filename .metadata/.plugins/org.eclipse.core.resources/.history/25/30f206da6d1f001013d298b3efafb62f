@@ -1,0 +1,9 @@
+package example.hibernate.many_to_many_bidirectional;
+
+public class Candidate {
+
+	public Candidate() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

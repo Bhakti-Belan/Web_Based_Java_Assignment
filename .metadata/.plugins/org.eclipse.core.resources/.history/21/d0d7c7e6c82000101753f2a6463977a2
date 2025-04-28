@@ -1,0 +1,12 @@
+package example.spring.core;
+
+public class Tyre {
+	private String make;
+	private String type;
+	public Tyre()
+	{
+		make="MRF";
+		type="With Tube";
+	}
+
+}

@@ -1,0 +1,34 @@
+package example.hibernate.one_to_many_unidirectional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class LinkCreditCardsToCustomers {
+
+	public static void main(String[] args) {
+		try(
+				SessionFactory factory=HibernateUtils.getSessionFactory();
+				Session session =factory.openSession())
+		{
+			CreditCard cc1=session.find(CreditCard.class,1111);
+			CreditCard cc2=session.find(CreditCard.class,2222);
+			CreditCard cc3=session.find(CreditCard.class,3333);
+			CreditCard cc4=session.find(CreditCard.class,4444);
+			CreditCard cc5=session.find(CreditCard.class,5555);
+			
+			Customer c1=session.find(Customer.class,"C001");
+			Customer c2=session.find(Customer.class,"C002");
+			Transaction tx=session.beginTransaction();
+			session.persist(c1);
+			session.persist(c2);
+			tx.commit();
+			
+			
+	}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

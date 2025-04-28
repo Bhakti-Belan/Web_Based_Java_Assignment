@@ -1,0 +1,30 @@
+package example.hibernate.many_to_many_bidirectional;
+
+import java.util.Collection;
+
+public class Certification {
+@Override
+	public String toString() {
+		return "Certification [cerificationCode=" + cerificationCode + ", title=" + title + ", candidates=" + candidates
+				+ "]";
+	}
+private String cerificationCode;
+private String title;
+private Collection<Candidate> candidates;
+	public Collection<Candidate> getCandidates() {
+	return candidates;
+}
+public void setCandidates(Collection<Candidate> candidates) {
+	this.candidates = candidates;
+}
+	public Certification(String cerificationCode, String title, Collection<Candidate> candidates) {
+	super();
+	this.cerificationCode = cerificationCode;
+	this.title = title;
+	this.candidates = candidates;
+}
+	public Certification() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

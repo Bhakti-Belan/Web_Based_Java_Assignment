@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Book</title>
+</head>
+<body>
+<form action="" method="post">
+<pre>
+Enter Book Title:<input type="text" name="title">
+<input type="submit" value="Update Details">
+</pre>
+</form>
+</body>
+</html>

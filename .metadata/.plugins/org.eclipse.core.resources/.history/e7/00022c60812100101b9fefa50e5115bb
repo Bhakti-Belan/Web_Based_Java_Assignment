@@ -1,0 +1,40 @@
+<%@page import="com.bookshop.entity.Book"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"  %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Books</title>
+</head>
+<body>
+
+<h1>Books Available</h1>
+
+<%
+    RequestDispatcher dispatcher = request.getRequestDispatcher("viewBooks");
+    dispatcher.forward(request, response);
+%>
+
+<br><br>
+
+<%
+    List<Book> books = (List<Book>) request.getAttribute("books");
+    if (books != null && !books.isEmpty()) {
+%>
+    <ul>
+    <% for (Book book : books) { %>
+        <li><strong><%= book.getTitle() %></strong> by <%= book.getAuthor() %></li>
+    <% } %>
+    </ul>
+<%
+    } else {
+%>
+    <p>No books available.</p>
+<%
+    }
+%>
+
+</body>
+</html>

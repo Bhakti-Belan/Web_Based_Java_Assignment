@@ -1,0 +1,56 @@
+package example.hibernate.controller;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import com.bookshop.service.BookService;
+
+/**
+ * Servlet implementation class DeleteBookServlet
+ */
+@WebServlet("/deleteBook")
+public class DeleteBookServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DeleteBookServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		BookService bs=new BookService();
+		String title=request.getParameter("title");
+		if(bs.deletebook(title))
+		{
+			out.println("Book Removed SuccessFully!!");
+			request.getRequestDispatcher("deleteBook.jsp").forward(request, response);
+		
+		}
+		else
+		{
+			out.println("Failed To Delete");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

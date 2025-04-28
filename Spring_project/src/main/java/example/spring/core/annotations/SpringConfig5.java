@@ -1,0 +1,11 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.ComponentScan;
+
+import org.springframework.context.annotation.Configuration;
+@ComponentScan(basePackages= {"food_item","dessert","example"})
+@Configuration
+public class SpringConfig5 {
+	//Bean declarations if any using @Bean
+
+}

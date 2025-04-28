@@ -1,0 +1,35 @@
+package example.servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+/**
+ * Servlet implementation class ViewDepartmentServlet
+ */
+
+@WebServlet("/viewDepts")
+public class ViewDepartmentServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession();
+		Object obj = session.getAttribute("loadedDeptNames");
+		List<String> allDeptNames = (List<String>)obj;
+		out.println("<h2>Showing Department Names:");
+		allDeptNames.stream().forEach(name-> out.println("<h3>"+name+"</h3>"));
+	}
+
+}

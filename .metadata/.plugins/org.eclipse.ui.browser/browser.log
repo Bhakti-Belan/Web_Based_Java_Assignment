@@ -1,0 +1,7 @@
+
+Apr 19, 2025 13:24:07.80 NEW SESSION
+Apr 19, 2025 13:24:07.82 *** You are running in background task mode. ***
+Apr 19, 2025 13:24:07.82 *** You are running in headless mode.
+Apr 19, 2025 13:24:07.99 console.error: "C:\\Users\\CDAC\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\zd1c5pla.default-release\\storage\\to-be-removed" "" 0 "*" "Quota"
+Apr 19, 2025 13:24:07.99 console.error: "Deletion of folder {6091c137-f1f9-43a7-97af-ad300a0d1282} - success=true"
+Apr 19, 2025 13:24:07.99 console.error: "Pinged glean, waiting for submission."

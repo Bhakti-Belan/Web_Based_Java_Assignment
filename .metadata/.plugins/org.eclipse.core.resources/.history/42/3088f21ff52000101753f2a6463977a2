@@ -1,0 +1,14 @@
+package com.bookshop.service;
+
+import com.bookshop.entity.Book;
+
+public class BookService {
+
+	public boolean addBook(Book book)
+	{
+		boolean status=false;
+		
+		
+	}
+
+}

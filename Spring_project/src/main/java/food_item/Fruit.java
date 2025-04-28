@@ -1,0 +1,15 @@
+package food_item;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@Component
+
+public class Fruit {
+	
+	public void testFruit()
+	{
+		System.out.println("Fruit Is Sweet");
+	}
+
+}

@@ -1,0 +1,22 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+
+import example.spring.core.MyClass;
+
+//@Configuration
+public class SpringConfig2 {
+	@Bean("myBean")
+public MyClass getMyClassObject()
+{
+		return new MyClass();
+}
+	@Bean("myBean1")
+	@Lazy
+	public MyClass getMyClassObject1()
+	{
+			return new MyClass();
+	}
+}

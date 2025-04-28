@@ -1,0 +1,9 @@
+package com.bookshop.dao;
+
+public class AuthorDao {
+
+	public AuthorDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

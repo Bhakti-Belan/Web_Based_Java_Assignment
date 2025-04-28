@@ -1,0 +1,9 @@
+package example.spring.aop;
+
+public class Musician {
+	
+public void perform()
+{
+	System.out.println("Play some Music");
+}
+}

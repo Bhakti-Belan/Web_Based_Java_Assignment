@@ -1,0 +1,9 @@
+package example.hibernate.one_to_many_unidirectional;
+
+public class AddCreditCardsExampleMain {
+
+	public AddCreditCardsExampleMain() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.bookshop.service;
+
+import com.bookshop.dao.BookDao;
+import com.bookshop.entity.Book;
+
+public class BookService {
+	private BookDao dao;
+	
+
+	public BookService() {
+		dao=new BookDao();
+	}
+
+
+	public boolean addBook(Book book)
+	{
+		boolean status=false;
+		
+		
+	}
+
+}

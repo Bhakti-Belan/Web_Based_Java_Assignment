@@ -1,0 +1,60 @@
+package example.spring.rest.security;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+import ch.qos.logback.core.encoder.Encoder;
+@SpringBootApplication
+public class SpringRestSecurityProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringRestSecurityProjectApplication.class, args);
+	}
+	//1 . password Encoding:BCeyptpasswordEncoding
+	@Bean
+	public BCryptPasswordEncoder encode()
+	{
+		return new BCryptPasswordEncoder();
+	}
+	
+	//2. In Memory Users:UserDetailsService 
+	
+	@Bean
+	public UserDetailsService getUserDetailsService()
+	{
+		UserDetails user1=
+		User.withUsername("user").password(encode().encode("asUser")).roles("USER").build();
+		
+		UserDetails user2=
+				User.withUsername("admin").password(encode().encode("asAdmin")).roles("ADMIN").build();
+		 InMemoryUserDetailsManager userDetailsManager=new InMemoryUserDetailsManager(user1,user2);
+		
+		return userDetailsManager;
+	}
+	
+	//3. Security Configuration :securityFilterChain
+	
+	public SecurityFilterChain getSecurityFilterChain(HttpSecurity http)throws Exception
+	{  
+		http.authorizeHttpRequests(auth ->{
+			auth.requestMatchers("/doGreet").permitAll();
+			auth.requestMatchers("/doUserWork").hasAnyRole("USER","ADMIN")
+			.requestMatchers("/doAdminWork").hasAnyRole("ADMIN").anyRequest().authenticated();
+		}
+		 );
+		
+		return null;
+	}
+	
+	
+	
+
+}

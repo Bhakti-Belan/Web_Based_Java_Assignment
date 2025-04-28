@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean class="example.spring.core.UserService" id="springBean2">
+  <property name="name" value="Anita Sharma"/>
+  <property name="message" value="Welcome"/>
+  <property name="age" value="55"/>
+  </bean> 
+   <bean class="example.spring.core.UserService" id="springBean3">
+   <constructor-arg value="JIM"/>
+     <constructor-arg value="HII"/>
+       <constructor-arg value="32"/>
+       
+   
+   
+   </bean>
+   
+</beans>

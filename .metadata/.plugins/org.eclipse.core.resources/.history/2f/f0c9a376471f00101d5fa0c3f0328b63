@@ -1,0 +1,13 @@
+package example.hibernate.one_to_one_unidirectional;
+
+import java.time.LocalDate;
+
+public class Passport {
+   private String passportNo;
+   private String nameOnPassport;
+   private LocalDate expDate;
+	public Passport() {
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package example.spring.core;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ReferenceInjectionExampleMain {
+
+	public static void main(String[] args) {
+		String fileName="spring-config2.xml";
+		ApplicationContext ctx=new ClassPathXmlApplicationContext(fileName);
+		Object loadedCustomer=ctx.getBean("");
+		System.out.println(loadedCustomer);
+
+	}
+
+}

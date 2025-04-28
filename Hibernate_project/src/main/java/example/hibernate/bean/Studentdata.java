@@ -1,0 +1,58 @@
+package example.hibernate.bean;
+
+public class Studentdata {
+	private String Student_name;
+	private String Student_branch;
+	private String Student_year;
+	
+
+	@Override
+	public String toString() {
+		return "Studentdata [Student_name=" + Student_name + ", Student_branch=" + Student_branch + ", Student_year="
+				+ Student_year + "]";
+	}
+
+
+	public String getStudent_name() {
+		return Student_name;
+	}
+
+
+	public void setStudent_name(String student_name) {
+		Student_name = student_name;
+	}
+
+
+	public String getStudent_branch() {
+		return Student_branch;
+	}
+
+
+	public void setStudent_branch(String student_branch) {
+		Student_branch = student_branch;
+	}
+
+
+	public String getStudent_year() {
+		return Student_year;
+	}
+
+
+	public void setStudent_year(String student_year) {
+		Student_year = student_year;
+	}
+
+
+	public Studentdata(String student_name, String student_branch, String student_year) {
+		super();
+		Student_name = student_name;
+		Student_branch = student_branch;
+		Student_year = student_year;
+	}
+
+
+	public Studentdata() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

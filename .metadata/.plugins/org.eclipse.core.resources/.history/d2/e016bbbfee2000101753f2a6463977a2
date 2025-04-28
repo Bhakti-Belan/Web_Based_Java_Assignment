@@ -1,0 +1,15 @@
+package com.bookshop.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Book {
+	private int id;
+	private String title;
+	private double price;
+	private int publicationYear;
+	s
+	private Author author;
+
+}

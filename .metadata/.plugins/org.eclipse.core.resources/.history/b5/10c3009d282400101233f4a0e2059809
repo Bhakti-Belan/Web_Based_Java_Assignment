@@ -1,0 +1,24 @@
+package example.spring.rest.security;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+public class SpringRestSecurityController
+{ 
+@GetMapping("/doGreet")
+ public String getGreeting()
+ {
+	return "Welcome to Spring Security"	;
+ }
+@GetMapping("/doUserWork")
+public String getUserwork()
+{
+	return "Doing User work"	;
+}
+@GetMapping("/doAdminWork")
+public String getAdminwork()
+{
+	return "Doing Admin work"	;
+ 
+}
+}

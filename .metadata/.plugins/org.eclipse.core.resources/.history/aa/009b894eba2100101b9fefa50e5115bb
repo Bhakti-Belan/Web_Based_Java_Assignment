@@ -1,0 +1,39 @@
+package example.spring.aop;
+
+
+import org.aspectj.lang.annotation.Aspect;
+
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect //marks this class as an aspect
+public class AudienceWithAround {
+	@Pointcut("execution (* example.spring.aop.*.perform(..))")
+	private void myPointCut() {}
+	
+	
+private void takeSeats()
+{
+	System.out.println("Please Take Seats.:around");
+}
+	
+private void turnOffMobile()
+{
+	System.out.println("Please Turn Off Mobile.:around");
+}
+	
+private void clap()
+{
+	System.out.println("Clap Clap Clap.:around");
+}
+private void demandForRefund()
+{
+	System.out.println("Please give my money back.:around");
+}
+	
+private void leave()
+{
+	System.out.println("Leaving now.:around");
+}
+}

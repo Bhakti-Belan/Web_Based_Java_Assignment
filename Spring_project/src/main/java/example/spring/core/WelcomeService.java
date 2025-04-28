@@ -1,0 +1,15 @@
+package example.spring.core;
+
+public class WelcomeService implements GreetingService {
+
+	public WelcomeService() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String sayGreeting() {
+		// TODO Auto-generated method stub
+		return "Welcome From Spring";
+	}
+
+}

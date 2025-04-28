@@ -1,0 +1,9 @@
+package example.hibernate.utils;
+
+public class FromClauseExampleMain {
+
+	public FromClauseExampleMain() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.bookshop.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.bookshop.dao.BookDao;
+import com.bookshop.entity.Book;
+
+public class BookService {
+	private BookDao dao;
+	
+
+	public BookService() {
+		dao=new BookDao();
+	}
+
+
+	public boolean addBook(Book newBook,String authorName,String authorEmail,String authorContry)
+	{
+		Optional<Book>foundBook=dao.findAll().stream().filter(book->book.getTitle().equalsIgnoreCase(newBook.getTitle()))
+		.findFirst();
+		if(foundBook.isPresent())
+		{
+	throw new ResourseAlreadyExistsException("Book With The Same Title Already Exists");
+		}
+		
+		return	dao.save(newBook);
+	}
+
+}

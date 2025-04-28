@@ -1,0 +1,52 @@
+package example.spring.core;
+
+public class UserService implements GreetingService {
+  
+public UserService(int age, String name, String message) {
+	System.out.println("int,string,string");
+		this.age = age;
+		this.name = name;
+		this.message = message;
+	}
+@Override
+	public String toString() {
+		return "UserService [name=" + name + ", message=" + message + ", age=" + age + "]";
+	}
+public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+public UserService() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+public UserService(String name, String message, int age) {
+		System.out.println("string,string,int");
+		this.name = name;
+		this.message = message;
+		this.age = age;
+	}
+private String name;
+   private String message;
+   private int age;
+	@Override
+	public String sayGreeting() {
+		
+		return null;
+	}
+
+}

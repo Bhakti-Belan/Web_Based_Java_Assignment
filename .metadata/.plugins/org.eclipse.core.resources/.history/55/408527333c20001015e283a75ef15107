@@ -1,0 +1,10 @@
+package example.spring.core;
+
+public class Address {
+private String city;
+private int pincode;
+public Address() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+}

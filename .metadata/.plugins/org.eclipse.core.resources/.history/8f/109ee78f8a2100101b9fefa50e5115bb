@@ -1,0 +1,34 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import example.spring.core.Car;
+import example.spring.core.Engine;
+import example.spring.core.Tyre;
+
+@Configuration
+public class SpringConfig4 {
+	//@Bean
+	public Tyre tyreBean()
+	{
+		Tyre tyre=new Tyre("MRF","Tubeless");
+		return tyre;
+	}
+   @Bean
+   public Engine engineBean()
+   {
+	   Engine engine=new Engine("Petrol","1600 cc");
+	   return engine;
+   }
+   @Bean
+   public Car carBean()
+   {
+	   Car car=new Car();
+	   car.setCarId("C001");
+	   car.setMake("Hyundai");
+	   car.setModel("Creta");
+	   return car;
+	   //not setting values for Tyre and Engine bcoz they will get Autowired.
+   }
+}

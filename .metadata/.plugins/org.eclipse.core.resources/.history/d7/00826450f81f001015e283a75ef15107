@@ -1,0 +1,26 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import example.hibernate.entity.Student;
+import example.hibernate.utils.HibernateUtils;
+
+public class AddStudentExampleMain {
+
+	public static void main(String[] args) {
+		try(SessionFactory factory=HibernateUtils.getSessionFactory();
+			Session session=factory.openSession()
+				)
+		{
+			Student studentObject=new Student(108,"Nia Sharms","Computers","SE");
+		    Transaction tx=session.beginTransaction();
+		    session.persist(studentObject);
+		    tx.commit();
+		    System.out.println("Record added successfully");
+		}catch(Exception e)
+		{
+			
+		}
+	
+	}
+}

@@ -1,0 +1,9 @@
+package com.bookshop.util;
+
+public class HibrenateUtils {
+
+	public HibrenateUtils() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.bookshop.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.bookshop.entity.Book;
+import com.bookshop.util.HibrenateUtils;
+
+
+
+public class BookDao {
+
+	
+		public boolean save(Book book)
+		{
+			boolean status=false;
+			try(SessionFactory factory=HibrenateUtils.getSessionFactory();
+				Session session=factory.openSession()) {
+				Transaction tx=session.beginTransaction();
+				session.persist(book);
+				tx.commit();
+				status=true;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return status;
+			
+		}
+
+}

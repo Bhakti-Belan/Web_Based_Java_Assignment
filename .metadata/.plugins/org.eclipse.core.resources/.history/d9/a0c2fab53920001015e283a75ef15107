@@ -1,0 +1,22 @@
+package example.spring.core;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+public class DependencyInjectionExampleMain3 {
+
+	public static void main(String[] args) {
+		String fileName="spring-config.xml";
+		ApplicationContext ctx;
+		ctx=new ClassPathXmlApplicationContext(fileName);
+		Object loadedObject=ctx.getBean("springBean2");
+		GreetingService gs=(GreetingService)loadedObject;
+		System.out.println(gs.sayGreeting());
+        System.out.println("---------------------------------------");
+        Object loadedObject=ctx.getBean("springBean3");
+		GreetingService gs=(GreetingService)loadedObject;
+		System.out.println(gs.sayGreeting());
+	}
+
+}

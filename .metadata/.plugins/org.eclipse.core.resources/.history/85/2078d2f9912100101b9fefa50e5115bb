@@ -1,0 +1,8 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class SpringConfig5 {
+
+}

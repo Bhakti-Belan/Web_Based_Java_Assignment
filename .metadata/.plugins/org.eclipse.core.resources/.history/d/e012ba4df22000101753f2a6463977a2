@@ -1,0 +1,33 @@
+package com.bookshop.util;
+
+import java.util.Properties;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.bookshop.entity.Author;
+
+import example.hibernate.entity.Article;
+
+public class HibrenateUtils {
+public static SessionFactory getSessionFactory()
+{
+	Configuration config=new Configuration();
+	Properties hibernateProperties=new Properties();
+	hibernateProperties.put("hibernate.connection.driver_class","com.mysql.cj.jdbc.Driver");
+	hibernateProperties.put("hibernate.connection.url","jdbc:mysql://localhost:3306/met" );
+	hibernateProperties.put("hibernate.connection.username", "root");
+	hibernateProperties.put("hibernate.connection.password","password" );
+	hibernateProperties.put("hibernate.show_sql", "true");
+	hibernateProperties.put("hibernate.hbm2ddl.auto","update" );
+	config.setProperties(hibernateProperties);
+	Class<Author> entityClass=Author.class;
+	config.addAnnotatedClass(entityClass);
+	SessionFactory factory=config.buildSessionFactory();
+	return factory;
+	
+	
+	
+	return config.buildSessionFactory();
+}
+}

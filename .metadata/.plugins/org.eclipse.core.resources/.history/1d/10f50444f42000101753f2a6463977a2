@@ -1,0 +1,9 @@
+package com.bookshop.service;
+
+public class BookService {
+
+	public BookService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

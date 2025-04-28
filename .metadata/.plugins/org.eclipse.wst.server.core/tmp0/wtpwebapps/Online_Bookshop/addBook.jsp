@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+<style type="text/css">
+#box {
+	margin: auto;
+	width: 400px;
+	height: auto;
+	border: 2px solid red
+}
+</style>
+</head>
+<body>
+	<div id="box">
+		<h1>Add Book</h1>
+		<form action="addBook" method="post">
+			<pre>
+			<h2>
+Title:<input type="text" name="title">
+Price:<input type="text" name="price">
+Publication Year:<input type="text" name="year">
+Author Name:<input typr="text" name="name">
+Author Email:<input typr="text" name="email">
+Author Country:<input typr="text" name="country">
+<input type="submit" value="submit">
+</h2>
+</pre>
+		</form>
+</body>
+</html>

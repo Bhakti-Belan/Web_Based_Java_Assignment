@@ -1,0 +1,28 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import example.spring.core.UserService;
+//@Configuration
+public class SpringConfig3 {
+	@Bean("userService")
+	public UserService getUserService()
+	{
+		UserService us=new UserService();
+		us.setName("James");
+		us.setMessage("welcome");
+		us.setAge(55);
+		return us;
+	}
+	@Bean("userService1")
+	@Scope("prototype")
+	public UserService getUserService2()
+	{
+		UserService us=new UserService("Jack","hello",56);
+		
+		return us;
+	}
+
+}

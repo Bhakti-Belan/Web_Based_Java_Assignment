@@ -1,0 +1,22 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class BeanScopeExampleMain {
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx=new 
+				AnnotationConfigApplicationContext("SpringConfig3.class");
+		Object obj=ctx.getBean("userService");
+		Object obj2=ctx.getBean("userService");
+		System.out.println("is Singleton?"+obj==obj2);
+        System.out.println("-----------------------------------");
+         obj=ctx.getBean("userService1");
+		 obj2=ctx.getBean("userService1");
+		System.out.println("is Singleton?"+obj==obj2); 
+		
+		
+
+	}
+
+}

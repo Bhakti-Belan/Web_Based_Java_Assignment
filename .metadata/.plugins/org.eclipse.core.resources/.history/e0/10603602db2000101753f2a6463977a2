@@ -1,0 +1,18 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import example.spring.core.GreetingService;
+
+public class SimpleExampleMain {
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext();
+		ctx.register(SpringConfig.class);
+		ctx.refresh();
+		Object obj=ctx.getBean("hello");
+		GreetingService gs=(GreetingService)obj;
+		System.out.println(gs.sayGreeting());
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package example.spring.core;
+
+public class Engine {
+	private String type;
+	private String power;
+	public Engine() {
+		type="petrol";
+		power="1200cc";
+	}
+
+}

@@ -1,0 +1,12 @@
+package dessert.brownie;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ChocolateBrownie {
+	public void tasteChocolateBrownie()
+	{
+		System.out.println("Choco brownie");
+	}
+
+}

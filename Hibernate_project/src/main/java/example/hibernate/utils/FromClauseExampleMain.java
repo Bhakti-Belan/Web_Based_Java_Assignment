@@ -1,0 +1,46 @@
+package example.hibernate.utils;
+
+import java.util.List;
+import java.util.function.Consumer;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import example.hibernate.entity.Student;
+
+public class FromClauseExampleMain {
+
+	
+		public static void main(String[] args) {
+			try(SessionFactory factory=HibernateUtils.getSessionFactory();
+				Session session=factory.openSession()
+					)
+			{
+				//String hqlQuery="select studen_name,student_branch from student_details";
+				String hqlQuery="select s.name,s.branch from Student s";
+			Query<Object[]> queryObject=session.createQuery(hqlQuery,Object[].class);
+			List<Object[]>studentData=queryObject.list();
+			for(Object[] studentInfo:studentData)
+			{
+				String sName=(String)studentInfo[0];
+				String sBranch=(String)studentInfo[1];
+				System.out.println(sName.toUpperCase()+"  "+sBranch.toUpperCase());
+			}
+		System.out.println("-----------------------------------------------------------");
+			Consumer<Object[]> consumerObject=  
+					studentInformation->{String name=(String) studentInformation[0];
+				String branch=(String) studentInformation[0];
+				System.out.println(name.toUpperCase()+" "+branch.toUpperCase());
+			
+				
+			};
+			studentData.stream().forEach(consumerObject);
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+	}
+}

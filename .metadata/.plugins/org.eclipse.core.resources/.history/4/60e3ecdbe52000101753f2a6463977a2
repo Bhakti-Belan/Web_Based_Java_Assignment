@@ -1,0 +1,12 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class BeanLoadingExampleMain {
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext("SpringConfig2.class");
+         ctx.getBean("myBean1");
+	}
+
+}

@@ -1,0 +1,5 @@
+package example.hibernate.entity;
+
+public enum Category {
+
+}

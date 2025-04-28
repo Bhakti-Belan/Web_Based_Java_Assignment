@@ -1,0 +1,74 @@
+package example.spring.core;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Car {
+	private String carId;
+	private String make;
+	private String model;
+	@Autowired(required=false)
+	private Tyre tyreDetails;
+	@Autowired
+	private Engine engineDatails;
+
+	@Override
+	public String toString() {
+		return "Car [carId=" + carId + ", make=" + make + ", model=" + model + ", tyreDetails=" + tyreDetails
+				+ ", engineDatails=" + engineDatails + "]";
+	}
+
+	public String getCarId() {
+		return carId;
+	}
+
+	public void setCarId(String carId) {
+		this.carId = carId;
+	}
+
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public Tyre getTyreDetails() {
+		return tyreDetails;
+	}
+
+	public void setTyreDetails(Tyre tyreDetails) {
+		this.tyreDetails = tyreDetails;
+	}
+
+	public Engine getEngineDatails() {
+		return engineDatails;
+	}
+
+	public void setEngineDatails(Engine engineDatails) {
+		this.engineDatails = engineDatails;
+	}
+
+	public Car(String carId, String make, String model, Tyre tyreDetails, Engine engineDatails) {
+		super();
+		this.carId = carId;
+		this.make = make;
+		this.model = model;
+		this.tyreDetails = tyreDetails;
+		this.engineDatails = engineDatails;
+	}
+
+	public Car() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

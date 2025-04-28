@@ -1,0 +1,22 @@
+package example.spring.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+@Controller
+public class SpringMvcController {
+	@RequestMapping("/doGreet")
+public String getIndexPage()
+{
+		System.out.println("Request received.");
+	return "index";
+}
+	@RequestMapping("/doValidate")
+	public String doVAlidateUser(String userName, String password) {
+		return " ";
+	}
+	
+}

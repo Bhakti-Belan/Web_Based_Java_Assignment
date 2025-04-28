@@ -1,0 +1,36 @@
+package example.hibernate.utils;
+
+public class ShowAllArticles {
+	
+	    public static void main(String[] args) {
+	        try (SessionFactory factory = HibernateUtils.getSessionFactory();
+	             Session session = factory.openSession()) {
+
+	            // Begin transaction (optional for read but good practice)
+	            session.beginTransaction();
+
+	            // HQL Query to fetch all articles
+	            String hql = "from Article";
+	            Query<Article> query = session.createQuery(hql, Article.class);
+	            List<Article> articles = query.list();
+
+	            // Display the results
+	            if (articles.isEmpty()) {
+	                System.out.println("No articles found.");
+	            } else {
+	                System.out.println("Articles:");
+	                for (Article article : articles) {
+	                    System.out.println(article);
+	                }
+	            }
+
+	            // Commit transaction
+	            session.getTransaction().commit();
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+	}
+
+

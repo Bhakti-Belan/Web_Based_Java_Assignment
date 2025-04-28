@@ -1,0 +1,35 @@
+package example.hibernate.one_to_many_unidirectional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import example.hibernate.one_to_one_unidirectional.HibernateUtils;
+
+public class AddCreditCardsExampleMain {
+
+	public static void main(String[] args) {
+		try(
+				SessionFactory factory=HibernateUtils.getSessionFactory();
+				Session session =factory.openSession())
+		{
+			CreditCard cc1=new CreditCard("1111","Amar Singh","ICICI","Visa",150000);
+			CreditCard cc2=new CreditCard("2222","Nitu Singh","ICICI","Visa",250000);
+			CreditCard cc3=new CreditCard("3333","Manisha Singh","ICICI","Visa",50000);
+			CreditCard cc4=new CreditCard("4444","Tanish Singh","ICICI","Visa",350000);
+			CreditCard cc5=new CreditCard("5555","Amrita Singh","ICICI","Visa",50000);
+			Transaction tx=session.beginTransaction();
+			session.persist(cc1);
+			session.persist(cc2);
+			session.persist(cc3);
+			session.persist(cc4);
+			session.persist(cc5);
+			tx.commit();
+			
+	}
+		catch(Exception e)
+		{
+			
+		}
+	}
+}

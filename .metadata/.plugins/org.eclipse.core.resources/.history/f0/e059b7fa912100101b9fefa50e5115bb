@@ -1,0 +1,12 @@
+package example.spring.core.annotations;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class PureAnnotationBasedExampleMain {
+public static void main(String[] args) {
+	AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(SpringConfig5.class);
+	TestComponent tc=ctx.getBean(TestComponent.class);
+	tc.testComponent();
+	
+}
+}

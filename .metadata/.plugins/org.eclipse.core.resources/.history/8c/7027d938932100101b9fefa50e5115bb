@@ -1,0 +1,9 @@
+package food_item;
+
+public class Fruit {
+	public void testFruit()
+	{
+		System.out.println("Fruit Is Sweet");
+	}
+
+}

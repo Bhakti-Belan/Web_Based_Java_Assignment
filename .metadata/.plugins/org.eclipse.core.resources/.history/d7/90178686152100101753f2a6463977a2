@@ -1,0 +1,53 @@
+package com.bookshop.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.bookshop.dao.AuthorDao;
+import com.bookshop.dao.BookDao;
+import com.bookshop.entity.Author;
+import com.bookshop.entity.Book;
+
+import example.hibernate.exception.ResourceNotFoundException;
+
+public class BookService {
+	private BookDao dao;
+	private AuthorDao adao;
+
+	public BookService() {
+		dao = new BookDao();
+		adao = new AuthorDao();
+	}
+
+	public boolean addBook(Book newBook, String authorName, String authorEmail, String authorContry) {
+		Optional<Book> foundBook = dao.findAll().stream()
+				.filter(book -> book.getTitle().equalsIgnoreCase(newBook.getTitle())).findFirst();
+		if (foundBook.isPresent()) {
+			throw new ResourseAlreadyExistsException("Book With The Same Title Already Exists");
+		}
+		
+		Author foundAuthor = adao.findByNameandEmail(authorName, authorEmail);
+		if (foundAuthor == null) {
+			Author newAuthor = new Author(0, authorName, authorEmail, authorContry);
+			boolean isSaved = adao.save(newAuthor);
+			if (isSaved) {
+				newBook.setAuthor(newAuthor);
+			} 
+		}else {
+			newBook.setAuthor(foundAuthor);
+		}
+
+		return dao.save(newBook);
+	}
+	public Book getBookByTitle(String title)
+	{
+		Book foundbook=null;
+		foundbook= dao.findByTitle(title);
+		if(foundbook==null)
+		{
+			throw new ResourceNotFoundException("Book Not Found Exception!!"+title);
+		}
+		return foundbook;
+	}
+
+}

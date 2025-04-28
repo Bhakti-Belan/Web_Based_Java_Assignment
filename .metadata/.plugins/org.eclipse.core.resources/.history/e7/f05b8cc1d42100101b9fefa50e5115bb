@@ -1,0 +1,11 @@
+package example.spring.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SpringMvcController {
+public String getIndexPage()
+{
+	return "index";
+}
+}

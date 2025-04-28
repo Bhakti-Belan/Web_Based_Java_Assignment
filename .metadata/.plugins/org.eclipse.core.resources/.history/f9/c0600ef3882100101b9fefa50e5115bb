@@ -1,0 +1,5 @@
+package example.spring.core.annotations;
+
+public class SpringConfig4 {
+
+}
