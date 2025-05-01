@@ -1,9 +1,0 @@
-package example.hibernate.many_to_many_bidirectional;
-
-public class Certification {
-
-	public Certification() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -1,9 +1,0 @@
-package example.hibernate.one_to_many_unidirectional;
-
-public class LinkCreditCardsToCustomers {
-
-	public LinkCreditCardsToCustomers() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\CDAC\Desktop\Practice\Spring_Training\pom.xml"/>
+			<item value="C:\Users\CDAC\Desktop\Practice\Online_Bookshop"/>
 			<item value="C:\Users\CDAC\Desktop\Practice\Hibernate_project"/>
 			<item value="C:\Users\CDAC\Desktop\Practice\Article__Hibernate_Assignment"/>
 			<item value="C:\Users\CDAC\Desktop\Practice\Web_Project"/>
@@ -29,16 +31,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="example.spring.mvc"/>
-			<item value="com.bookshop"/>
 		</list>
 		<list key="groupId">
-			<item value="example.spring.mvc"/>
-			<item value="com.bookshop"/>
 		</list>
 		<list key="artifactId">
-			<item value="Spring_Mvc_Project"/>
-			<item value="Online_Bookshop"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -54,10 +50,16 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="example.practice.lib"/>
+			<item value="spring.core"/>
 		</list>
 		<list key="name">
+			<item value="Library_System"/>
+			<item value="Spring_Training"/>
 		</list>
 		<list key="artifactId">
+			<item value="Library_System"/>
+			<item value="Spring_Training"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

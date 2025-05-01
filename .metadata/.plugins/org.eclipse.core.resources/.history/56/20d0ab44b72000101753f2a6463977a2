@@ -1,5 +1,0 @@
-package example.hibernate.entity;
-
-public class Article {
-
-}

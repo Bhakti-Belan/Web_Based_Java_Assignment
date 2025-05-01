@@ -1,9 +1,0 @@
-package example.hibernate.bean;
-
-public class Studentdata {
-
-	public Studentdata() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

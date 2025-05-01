@@ -1,5 +1,0 @@
-package example.hibernate.one_to_one_unidirectional;
-
-public class AddPasssportExampleMain {
-
-}

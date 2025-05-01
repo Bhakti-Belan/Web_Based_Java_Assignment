@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="spring.core.entity.JavaTrainer"  id="javaTrainer">
+   <!--  <property name="name" value="Vishal Sir"></property>--> 
+   <constructor-arg name="name" value="Vandana Mama"/>
+   <constructor-arg name="topic">
+   <list>
+   <value>Multi-Threading</value>
+   <value>Exception Handling</value>
+   <value>Reflection</value>
+   </list>
+   </constructor-arg>
+    </bean>
+    <bean class="spring.core.entity.METNashik" id="met" autowire="byType">
+    
+    </bean>
+    
+    <bean class="spring.core.entity.PgDac" id="dac">
+    <constructor-arg name="center" ref="met"/>
+    </bean>
+   <bean class="spring.core.entity.JavaTrainer" id="advJavaTrainer"
+	primary="true">
+    <constructor-arg name="name" value="Rahul Sir"/>
+   <constructor-arg name="topic">
+   <list>
+   <value>Hibernate</value>
+   <value>JDBC</value>
+   <value>Spring</value>
+   </list>
+   </constructor-arg>
+    </bean>
+    
+    
+    </beans>

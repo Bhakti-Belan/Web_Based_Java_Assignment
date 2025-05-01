@@ -1,9 +1,0 @@
-package example.spring.core;
-
-public class HelloService implements GreetingService {
-
-	public HelloService() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
